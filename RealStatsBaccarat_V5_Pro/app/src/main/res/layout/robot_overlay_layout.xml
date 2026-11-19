@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rootRobotContainer"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- CON ROBOT MINI NỔI (Giống bản V2: kéo thả tự do, bấm vào để mở/thu bảng mini) -->
+    <LinearLayout
+        android:id="@+id/robotHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_robot_bubble"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <ImageView
+            android:id="@+id/ivRobotMiniIcon"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Robot"
+            android:src="@drawable/ic_robot_cutout" />
+
+        <TextView
+            android:id="@+id/tvRobotStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="AUTO: SOI CẦU"
+            android:textColor="#FFD54F"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnTogglePanel"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="6dp"
+            android:gravity="center"
+            android:text="▼"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/btnCloseApp"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="2dp"
+            android:gravity="center"
+            android:text="✕"
+            android:textColor="#FF5252"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- BẢNG MINI BÁO CẦU CHÍNH + CẦU PHỤ + CHỐT LỆNH (PHONG CÁCH V2) -->
+    <LinearLayout
+        android:id="@+id/miniReportPanel"
+        android:layout_width="292dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_mini_panel"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:visibility="visible">
+
+        <!-- Thanh trạng thái Xu & Ghim bảng -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvOverlayCoinBadge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="💰 Còn: 0 Xu | Bàn đang mở"
+                android:textColor="#FFD54F"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/btnPinPanel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#26FFFFFF"
+                android:paddingStart="6dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="6dp"
+                android:paddingBottom="2dp"
+                android:text="📌 Ghim: BẬT"
+                android:textColor="#00E5FF"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <!-- Dòng báo kết quả vừa bắt được -->
+        <TextView
+            android:id="@+id/tvLastCaptured"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Vừa bắt được: Đang tự động soi màn..."
+            android:textColor="#B0BEC5"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- KHUNG CHỐT CON / CÁI & TỶ LỆ OKE NHẤT -->
+        <TextView
+            android:id="@+id/tvMainPrediction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="#2600FF88"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="🤖 ĐANG QUÉT CẦU CHÍNH &amp; CẦU PHỤ..."
+            android:textColor="#00FF88"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Báo cáo Cầu Chính (Cầu 9) & Cầu Phụ -->
+        <TextView
+            android:id="@+id/tvMainRoadStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="📊 Cầu Chính (Cầu 9): Đang đọc bảng cầu..."
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDerivedRoadStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="🧭 Cầu Phụ (3 bảng): Đang đọc nhịp Đỏ/Xanh..."
+            android:textColor="#80DEEA"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- Chi tiết tỷ lệ thực & Markov V2 -->
+        <TextView
+            android:id="@+id/tvRealWinRate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="Tỷ lệ thực (0 ván): P 0.0% | B 0.0% | T 0"
+            android:textColor="#ECEFF1"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tvMarkovProb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Xác suất nhịp thực: Chờ đủ dữ liệu"
+            android:textColor="#4FC3F7"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvRecentSequence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Chuỗi bắt được: Trống"
+            android:textColor="#CFD8DC"
+            android:textSize="11sp" />
+
+        <!-- Hàng nút điều khiển nhanh -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnToggleAuto"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_weight="1.15"
+                android:backgroundTint="#00897B"
+                android:text="⏸ Dừng"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnToggleTarget"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1.05"
+                android:backgroundTint="#3949AB"
+                android:text="🎯 Tâm quét"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnResetShoe"
+                android:layout_width="0dp"
+                android:layout_height="34dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1.15"
+                android:backgroundTint="#E65100"
+                android:text="🔄 Bàn mới (-1)"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Hàng nút phụ trợ sửa tay / Mở App nạp Xu -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnManualP"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_weight="0.85"
+                android:backgroundTint="#1E88E5"
+                android:text="+P"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnManualB"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="0.85"
+                android:backgroundTint="#E53935"
+                android:text="+B"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnManualUndo"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="0.95"
+                android:backgroundTint="#546E7A"
+                android:text="Xóa 1"
+                android:textColor="#FFFFFF"
+                android:textSize="10sp" />
+
+            <Button
+                android:id="@+id/btnOpenMainApp"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1.15"
+                android:backgroundTint="#FFB300"
+                android:text="💰 Nạp Xu"
+                android:textColor="#0A0E17"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

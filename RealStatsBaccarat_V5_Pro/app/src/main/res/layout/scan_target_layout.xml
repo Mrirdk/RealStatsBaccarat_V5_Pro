@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/targetRoot"
+    android:layout_width="68dp"
+    android:layout_height="68dp"
+    android:background="@drawable/bg_scan_target">
+
+    <TextView
+        android:id="@+id/tvTargetLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#B3000000"
+        android:paddingStart="4dp"
+        android:paddingEnd="4dp"
+        android:text="🎯 QUÉT"
+        android:textColor="#00FF88"
+        android:textSize="9sp"
+        android:textStyle="bold" />
+</FrameLayout>

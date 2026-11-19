@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_app_gradient"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- HEADER LOGO & BRANDING -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:contentDescription="Robot V5 Logo"
+                android:src="@drawable/ic_robot_cutout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:letterSpacing="0.06"
+                android:text="AUTOROBOT BACCARAT V5"
+                android:textColor="#FFD54F"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="AI Soi Cầu Chính • Cầu Phụ • Tỷ Lệ Thực Chuẩn V2"
+                android:textColor="#80DEEA"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 1. KHUNG ĐĂNG NHẬP & LIÊN HỆ ĐĂNG KÝ CẤP XU               -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:id="@+id/layoutAuthSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/bg_luxury_card"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="🔐 ĐĂNG NHẬP TÀI KHOẢN"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Đăng nhập để sử dụng Robot soi cầu &amp; quản lý số dư Xu"
+                android:textColor="#90A4AE"
+                android:textSize="12sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Tên đăng nhập / Số điện thoại"
+                android:textColor="#CFD8DC"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etLoginUser"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Nhập tài khoản của bạn..."
+                android:inputType="text"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#607D8B"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Mật khẩu"
+                android:textColor="#CFD8DC"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etLoginPass"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/bg_input_field"
+                android:hint="Nhập mật khẩu..."
+                android:inputType="textPassword"
+                android:paddingStart="14dp"
+                android:paddingEnd="14dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#607D8B"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btnLoginSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/bg_btn_gold"
+                android:text="ĐĂNG NHẬP NGAY"
+                android:textColor="#0A0E17"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnOpenRegisterContact"
+                android:layout_width="match_parent"
+                android:layout_height="46dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_btn_outline_cyan"
+                android:text="📝 ĐĂNG KÝ / LIÊN HỆ ADMIN CẤP XU"
+                android:textColor="#00E5FF"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <!-- Hộp thông tin liên hệ Admin khi bấm Đăng ký -->
+            <LinearLayout
+                android:id="@+id/layoutRegisterContactBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_gold_card"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👑 ĐĂNG KÝ &amp; CẤP XU CHÍNH CHỦ"
+                    android:textColor="#FFD54F"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAdminContactInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="• Để tạo tài khoản và cấp Xu chơi (1 Xu = 1 Bàn), vui lòng liên hệ trực tiếp Admin:\n• Zalo / SĐT Admin: 0900.000.000\n• Telegram Admin: @AdminBaccaratV5"
+                    android:textColor="#ECEFF1"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnCopyAdminContact"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_outline_cyan"
+                        android:text="📋 Copy Liên Hệ"
+                        android:textColor="#00E5FF"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnOpenAdminTelegram"
+                        android:layout_width="0dp"
+                        android:layout_height="38dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_btn_emerald"
+                        android:text="💬 Nhắn Admin"
+                        android:textColor="#061018"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- ========================================================= -->
+        <!-- 2. BẢNG ĐIỀU KHIỂN SAU KHI ĐĂNG NHẬP                      -->
+        <!-- ========================================================= -->
+        <LinearLayout
+            android:id="@+id/layoutDashboardSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Thẻ tài khoản & Số dư Xu -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_gold_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvWelcomeUser"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="👤 Xin chào, Thành viên"
+                            android:textColor="#FFFFFF"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvCoinBalance"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="💰 Số dư hiện tại: 0 Xu"
+                            android:textColor="#FFD54F"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnLogout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:background="@drawable/bg_btn_outline_cyan"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:text="Đăng xuất"
+                        android:textColor="#FF8A80"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="⚡ Phí sử dụng: Tốn 1 Xu cho mỗi 1 Bàn chơi (Xem không giới hạn ván trong bàn đó)"
+                    android:textColor="#B0BEC5"
+                    android:textSize="11sp" />
+            </LinearLayout>
+
+            <!-- Nút khởi động Robot Soi Cầu (-1 Xu) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_luxury_card"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚀 CHẠY TOOL XEM CẦU TỰ ĐỘNG"
+                    android:textColor="#00E5FF"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="• Bấm chạy là Robot tự quét màn hình đọc cả Cầu Chính (Cầu 9) &amp; 3 bảng Cầu Phụ.\n• Kết hợp Tâm Quét 🎯 V2 báo lệnh Con/Cái kế tiếp &amp; tỷ lệ thực chuẩn nhất.\n• Bấm chạy mở bàn mới sẽ trừ 1 Xu vào số dư."
+                    android:textColor="#CFD8DC"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnLaunchRobot"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:layout_marginTop="14dp"
+                    android:background="@drawable/bg_btn_emerald"
+                    android:text="▶ BẤM CHẠY SOI CẦU (-1 XU / BÀN)"
+                    android:textColor="#051018"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <!-- Khung nhập mã nạp Xu / Liên hệ Admin nạp Xu -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etTopupCode"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1.4"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Nhập mã Xu từ Admin..."
+                        android:inputType="textCapCharacters"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#607D8B"
+                        android:textSize="12sp" />
+
+                    <Button
+                        android:id="@+id/btnRedeemCode"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/bg_btn_gold"
+                        android:text="Nạp Xu"
+                        android:textColor="#0A0E17"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnDashboardContactAdmin"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn_outline_cyan"
+                    android:text="💬 Liên hệ Admin mua thêm Xu"
+                    android:textColor="#00E5FF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- ========================================================= -->
+            <!-- 3. BẢNG QUẢN TRỊ DÀNH RIÊNG CHO ADMIN (CHỦ APP)           -->
+            <!-- ========================================================= -->
+            <LinearLayout
+                android:id="@+id/layoutAdminPanel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_luxury_card"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:visibility="gone">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="👑 QUẢN TRỊ ADMIN — CẤP TÀI KHOẢN &amp; XU"
+                    android:textColor="#FFD54F"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Tạo tài khoản cho khách hoặc cộng thêm Xu trực tiếp:"
+                    android:textColor="#90A4AE"
+                    android:textSize="11sp" />
+
+                <EditText
+                    android:id="@+id/etAdminTargetUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Tên đăng nhập khách (VD: khach01)"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#607D8B"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/etAdminTargetPass"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Mật khẩu khách"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#607D8B"
+                        android:textSize="12sp" />
+
+                    <EditText
+                        android:id="@+id/etAdminTargetCoins"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="0.8"
+                        android:background="@drawable/bg_input_field"
+                        android:hint="Số Xu (VD: 10)"
+                        android:inputType="number"
+                        android:paddingStart="12dp"
+                        android:paddingEnd="12dp"
+                        android:textColor="#FFD54F"
+                        android:textColorHint="#607D8B"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnAdminSaveUser"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_btn_gold"
+                    android:text="✅ TẠO TÀI KHOẢN / CỘNG XU CHO KHÁCH"
+                    android:textColor="#0A0E17"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvAdminUserList"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Danh sách tài khoản đã cấp: ..."
+                    android:textColor="#80DEEA"
+                    android:textSize="11sp" />
+
+                <!-- Cập nhật thông tin liên hệ của Admin -->
+                <EditText
+                    android:id="@+id/etAdminContactEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="42dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_input_field"
+                    android:hint="Zalo / Telegram liên hệ của bạn..."
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#607D8B"
+                    android:textSize="12sp" />
+
+                <Button
+                    android:id="@+id/btnAdminSaveContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="38dp"
+                    android:layout_marginTop="6dp"
+                    android:background="@drawable/bg_btn_outline_cyan"
+                    android:text="💾 Lưu thông tin liên hệ Admin"
+                    android:textColor="#00E5FF"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
